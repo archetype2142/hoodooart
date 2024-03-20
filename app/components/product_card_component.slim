@@ -1,0 +1,21 @@
+.bg-white.shadow-lg.rounded-lg.overflow-hidden.product-card
+  .image.relative
+    .absolute.top-2.left-2
+      - @product.categories.each do |category|
+        = render(BadgeComponent.new) do
+          span.font-semibold = category.title
+    - if @product.images.attached?
+      = image_tag @product.images.first
+    - else
+      img class="image" src="https://cdn.animaapp.com/projects/65f351da56a3abcc939dbad8/releases/65f351fef81bfb374ad1743d/img/image@2x.png" alt="Image"
+
+  .product-details.p-4.flex.flex-col.justify-between.h-100
+    div
+      = link_to @product do
+        h3.text-xl.font-semibold = @product.title
+
+      p.text-gray-700.mb-4 = @product.description&.to_plain_text&.truncate(120)
+    div
+      = form_with(url: @product, method: :get) do
+        = render(ButtonComponent.new(type: :outline, button_type: :submit)) do
+          span = t('view_details')

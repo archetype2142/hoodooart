@@ -1,0 +1,70 @@
+.container.relative.px-4
+  .flex.justify-between.md:mb-20.flex-row.mb-5
+    = render(BreadcrumbsComponent.new(\
+      crumbs: [ \
+        { text: t('home'), url: root_path }, \
+        { text: t('all_products'), url: products_path }, \
+      ]) \
+    )
+
+    .relative.flex.justify-center.items-center.md:hidden
+      .relative
+        div
+          button class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" type="button" id="menu-button" aria-expanded="true" aria-haspopup="true"
+            span = t('search')
+            svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+              path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"
+        .hidden.absolute.right-0.z-10.mt-2.w-56.origin-top-right.rounded-md.bg-white.shadow-lg.ring-1.ring-black.ring-opacity-5.focus:outline-none role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="menu-dropdown"
+          .p-4.rounded-lg
+            .flex.flex-row.justify-between
+              = link_to products_path do
+                = render(BadgeComponent.new) do
+                  span = t('clear_all')
+            .max-w-50.my-5
+              = search_form_for @q do |f|
+                = f.search_field :title_cont, value: params['q']&.dig('title_cont'), class: "w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:border-royalblue", placeholder: "#{t('search_products')}..."
+            .sort
+              h2.font-semibold = t('categories')
+              - Category.all.each do |category|
+                = search_form_for @q do |f|
+                  = f.search_field 'categories_title_cont', value: "#{category.title}", class: 'hidden'
+                  button.w-full.px-4.py-2.rounded.border.border-gray-300.focus:outline-none.focus:border-royalblue.mt-2.hover:bg-royalblue.hover:text-white.hover:cursor-pointer class="#{params&.dig(:q)&.dig(:categories_title_cont)&.downcase == category.title.downcase ? 'bg-royalblue text-white' : '' }" type="submit"
+                    .flex.justify-between.w-100
+                      span = category.title
+                      span.bg-royalblue.text-white.rounded.px-2 = category.products.count
+
+  .flex.flex-row.gap-4
+    .search.grow.min-w-48.fit-content.hidden.md:block
+      .border.p-4.rounded-lg
+        .flex.flex-row.justify-between
+          h1.font-semibold = t('search')
+          = link_to products_path do
+            = render(BadgeComponent.new) do
+              span = t('clear_all')
+        .max-w-50.my-5
+          = search_form_for @q do |f|
+            = f.search_field :title_cont, value: params['q']&.dig('title_cont'), class: "w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:border-royalblue", placeholder: "#{t('search_products')}..."
+        .sort
+          h2.font-semibold = t('categories')
+          - Category.all.each do |category|
+            = search_form_for @q do |f|
+              = f.search_field 'categories_title_cont', value: "#{category.title}", class: 'hidden'
+              button.w-full.px-4.py-2.rounded.border.border-gray-300.focus:outline-none.focus:border-royalblue.mt-2.hover:bg-royalblue.hover:text-white.hover:cursor-pointer class="#{params&.dig(:q)&.dig(:categories_title_cont)&.downcase == category.title.downcase ? 'bg-royalblue text-white' : '' }" type="submit"
+                .flex.justify-between.w-100
+                  span = category.title
+                  span.bg-royalblue.text-white.rounded.px-2 = category.products.count
+          
+    .flex.flex-col.w-full.mx-auto#products
+      .grid.md:grid-cols-3.grid-flow-row.gap-4.md:gap-20
+        = render @products
+
+      .mt-5
+        = pagy_nav(@pagy).html_safe
+
+javascript:
+  var menu_button = document.querySelector('#menu-button');
+  var menu_dropdown = document.querySelector('#menu-dropdown');
+
+  menu_button.addEventListener('click', e => {
+    menu_dropdown.classList.toggle('hidden');
+  })

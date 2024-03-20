@@ -1,0 +1,21 @@
+<div class="<%= base_classes %> <%= color_class[:background_color] %>">
+  <div class="tw-flex tw-items-center tw-gap-1">
+    <% if svg_position == :before %>
+      <% if svg.present? %>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-w-4 tw-h-4 <%= color_class[:text_color] %>">
+          <path stroke-linecap="round" stroke-linejoin="round" d="<%= svg_icon_definition %>" />
+        </svg>
+      <% end %>
+    <% end %>
+    <span class="<%= color_class[:text_color] %>">
+      <%= content %>
+    </span>
+    <% if svg_position == :after %>
+      <% if svg.present? %>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-w-4 tw-h-4 <%= color_class[:text_color] %>">
+          <path stroke-linecap="round" stroke-linejoin="round" d="<%= svg_icon_definition %>" />
+        </svg>
+      <% end %>
+    <% end %>
+  </div>
+</div>

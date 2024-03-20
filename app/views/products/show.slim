@@ -1,0 +1,62 @@
+.container.px-4
+  = render(BreadcrumbsComponent.new( \
+    crumbs: [ \
+      { text: t('home'), url: root_path }, \
+      { text: t('all_products'), url: products_path }, \
+      { text: @product.title } \
+    ]) \
+  )
+
+  .grid.md:grid-cols-2.grid-flow-row.gap-4.object-cover data-controller="swiper-products"
+    .product-images.flex.justify-center.flex-col.w-100
+      .flex.justify-center.w-100
+        .main-image.mb-5.rounded.w-full.md:w-96.h-96.object-cover.border.rounded-lg.border-royalblue
+          - if @product.images.attached?
+            = image_tag @product.images.first, class: 'rounded-lg w-full h-full object-cover', id: 'main_image'
+
+      .flex.flex-row.gap-2.w-100.justify-center.flex-wrap
+        - @product.images.each do |image|
+          .w-16.h-16.border.rounded-lg.border-royalblue
+            = image_tag image, class: 'rounded-lg w-full h-full object-cover image-thumbnail'
+
+    .product-details
+      - @product.categories.each do |category|
+        = render(BadgeComponent.new) do
+          = link_to products_path do
+            span.font-semibold = category.title
+
+      h1.font-semibold.text-2xl.mt-2 = @product.title
+      p.mt-5 = @product.description
+
+hr.my-8
+.font-semibold.text-xl.mb-5.px-4 = t('recommended_products')
+.flex.overflow-x-auto.gap-8.md:px-0.px-5.recommendations.pb-5.snap-x
+  - Product.order("RANDOM()").limit(5).each do |product|
+    .snap-center
+      = render(ProductCardComponent.new(product: product))
+    /= image_tag product.images.first
+
+css:
+  .recommendations {
+    scroll-snap-stop: always;
+  }
+
+  .recommendations::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    width: 350px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .product-card {
+      width: initial !important;
+      overflow: initial !important;
+      min-height: 100%;
+    }
+
+    .product-card .image img {
+      min-width: 300px !important;
+    }
+  }

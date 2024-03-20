@@ -1,0 +1,20 @@
+.container.px-4
+  .flex.sm:flex-row.justify-between.md:mb-20.flex-col
+    = render(BreadcrumbsComponent.new(\
+      crumbs: [ \
+        { text: t('home'), url: root_path }, \
+        { text: t('contact') }, \
+      ]) \
+    )
+
+  h1.text-xl = t('address')
+
+  p.font-semibold.mb-5
+    a.hover:text-royalblue href="https://maps.app.goo.gl/jYxnDV2uyWX1s5gf7"
+      p 
+        span GD Poland International 
+        br ul.Nadrzeczna 16, 05-552 Wólka Kosowska
+        | Hala 1, A14a
+
+
+  iframe.w-full.h-96.mt-5 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.196721353192!2d20.852298577022736!3d52.057941570335544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471931658b1e4053%3A0xe0c84aaf82be148c!2sNadrzeczna%2016%2C%2005-552%20W%C3%B3lka%20Kosowska!5e0!3m2!1sen!2spl!4v1710603736968!5m2!1sen!2spl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="h-full m-0">
+<head>
+  <title>High-Quality Jugs, Bowls, and Pitchers at Kaveh Glass | Hoodooart</title>
+  <meta name="description" content="Find high-quality jugs, bowls, and pitchers at Kaveh Glass, your trusted glassware products import and wholesale store. Explore our wide range of shot glass whiskey tumblers, bottles, and pitchers for all your glassware needs.">
+  <meta name="keywords" content="high-quality jugs, bowls, glassware products import, glass, poland, warsaw">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="h-full m-0">
+  <%= render 'layouts/header' %>
+
+  <main class="container mx-auto md:px-5 min-h-full">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= yield %>
+  </main>
+
+  <footer class="bg-transparent text-gray-700 py-6 bottom-0">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2024 Hoodooart. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M400 -8.74228e-06C373.736 -7.59423e-06 347.728 5.17315 323.463 15.2241C299.198 25.275 277.15 40.0069 258.579 58.5787C240.007 77.1504 225.275 99.1982 215.224 123.463C205.173 147.728 200 173.736 200 200L400 200L400 -8.74228e-06Z" fill="#0973E0"/>
+<mask id="mask0_701_18676" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="123" y="-79" width="557" height="557">
+<line x1="406.95" y1="-77.8925" x2="124.107" y2="204.95" stroke="#C2DE16" stroke-width="2"/>
+<line x1="418.264" y1="-66.579" x2="135.421" y2="216.264" stroke="#C2DE16" stroke-width="2"/>
+<line x1="429.577" y1="-55.2655" x2="146.734" y2="227.577" stroke="#C2DE16" stroke-width="2"/>
+<line x1="440.891" y1="-43.9511" x2="158.048" y2="238.892" stroke="#C2DE16" stroke-width="2"/>
+<line x1="452.205" y1="-32.6376" x2="169.362" y2="250.205" stroke="#C2DE16" stroke-width="2"/>
+<line x1="463.518" y1="-21.3241" x2="180.676" y2="261.519" stroke="#C2DE16" stroke-width="2"/>
+<line x1="474.832" y1="-10.0107" x2="191.989" y2="272.832" stroke="#C2DE16" stroke-width="2"/>
+<line x1="486.146" y1="1.30379" x2="203.303" y2="284.146" stroke="#C2DE16" stroke-width="2"/>
+<line x1="497.459" y1="12.6173" x2="214.617" y2="295.46" stroke="#C2DE16" stroke-width="2"/>
+<line x1="508.773" y1="23.9307" x2="225.93" y2="306.773" stroke="#C2DE16" stroke-width="2"/>
+<line x1="520.087" y1="35.2442" x2="237.244" y2="318.087" stroke="#C2DE16" stroke-width="2"/>
+<line x1="531.401" y1="46.5587" x2="248.558" y2="329.401" stroke="#C2DE16" stroke-width="2"/>
+<line x1="542.714" y1="57.8721" x2="259.872" y2="340.715" stroke="#C2DE16" stroke-width="2"/>
+<line x1="554.028" y1="69.1856" x2="271.185" y2="352.028" stroke="#C2DE16" stroke-width="2"/>
+<line x1="565.342" y1="80.4991" x2="282.499" y2="363.342" stroke="#C2DE16" stroke-width="2"/>
+<line x1="576.655" y1="91.8136" x2="293.813" y2="374.656" stroke="#C2DE16" stroke-width="2"/>
+<line x1="587.969" y1="103.127" x2="305.126" y2="385.97" stroke="#C2DE16" stroke-width="2"/>
+<line x1="599.283" y1="114.441" x2="316.44" y2="397.283" stroke="#C2DE16" stroke-width="2"/>
+<line x1="610.597" y1="125.754" x2="327.754" y2="408.597" stroke="#C2DE16" stroke-width="2"/>
+<line x1="621.91" y1="137.068" x2="339.068" y2="419.911" stroke="#C2DE16" stroke-width="2"/>
+<line x1="633.224" y1="148.382" x2="350.381" y2="431.225" stroke="#C2DE16" stroke-width="2"/>
+<line x1="644.538" y1="159.695" x2="361.695" y2="442.538" stroke="#C2DE16" stroke-width="2"/>
+<line x1="655.851" y1="171.009" x2="373.009" y2="453.852" stroke="#C2DE16" stroke-width="2"/>
+<line x1="667.165" y1="182.322" x2="384.322" y2="465.165" stroke="#C2DE16" stroke-width="2"/>
+<line x1="678.479" y1="193.637" x2="395.636" y2="476.479" stroke="#C2DE16" stroke-width="2"/>
+</mask>
+<g mask="url(#mask0_701_18676)">
+<circle cx="400" cy="200" r="199" fill="#C2DE16" stroke="#C2DE16" stroke-width="2"/>
+</g>
+<path d="M200 200H300C355.228 200 400 244.772 400 300C400 355.228 355.228 400 300 400C244.772 400 200 355.228 200 300V200Z" fill="#0973E0"/>
+<path d="M200 200H100C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100V200Z" fill="#00C1CD"/>
+</svg>

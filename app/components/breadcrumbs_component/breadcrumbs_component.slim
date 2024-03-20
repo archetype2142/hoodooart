@@ -1,0 +1,25 @@
+.level.my-5
+  .level-left
+    .level-item
+      ul
+        - @crumbs.each do |crumb|
+          - if crumb[:url]
+            li.crumb.md:text-2xl = link_to crumb[:text], crumb[:url], class: 'has-text-grey'
+          - else
+            li.crumb.md:text-2xl = crumb[:text]
+
+css:
+  .crumb {
+    display: inline-block;
+    padding: 0 0.75rem 0 0;
+  }
+
+  ul li.crumb:not(:last-child):after {
+    display: inline-block;
+    content: "/";
+    padding-left: 0.75rem;
+  }
+
+  ul li.crumb:last-child {
+    font-weight: bold;
+  }

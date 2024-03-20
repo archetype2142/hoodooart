@@ -1,0 +1,105 @@
+
+section.homepage-header class="bg-white text-white"
+  .py-8.px-14.max-w-screen-xl.lg:py-48
+    h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
+      span Welcome to </br> Hoodooart
+
+    p.font-normal.text-xl.text-white.leading-relaxed.mb-12 = t('wholesale_&_importer')
+
+    a.px-6.py-4.bg-royalblue.text-white.font-semibold.text-lg.rounded-xl.hover:bg-blue-900.transition.ease-in-out.duration-500 href="/products" = t('all_products')
+
+    div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
+    /a href="/products" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-royalblue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+        span = t('all_products')
+        svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"
+          path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"
+
+h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
+.mt-8.px-2.md:px-0.columns-2.gap-5.sm:columns-2.sm:gap-8.md:columns-3.lg:columns-4
+  - Category.all.each_with_index do |category, idx|
+    = link_to products_path(q: { categories_title_cont: category.title.downcase }) do
+      .relative.magic-box
+        .category-image-box.text-center.relative.rounded-lg.bg-white.shadow-lg.rounded-lg class="#{idx == 0 ? '' : 'mt-8'}"
+          - if category.image.attached?
+            = image_tag category.image, class: 'image-category rounded-lg object-cover'
+        .absolute.centered-text.font-semibold.text-2xl.text-white.p-4 = category.title.upcase
+
+css:
+  @media only screen and (max-width: 600px) {
+    .category-image-box img {
+      object-fit: cover;
+      object-position: top;
+      max-height: 300px;
+      width: 100%;
+    }
+  }
+
+  .homepage-header {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(74,105,187, 0.5)
+    ), url("#{asset_path('stock')}") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .magic-box:hover .centered-text {
+    color: black;
+  }
+
+  .centered-text {
+    position: absolute;
+    width: 100%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .centered-text {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .homepage-header {
+      height: 60vh;
+    }
+  }
+
+  .category-image-box {
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .category-image-box:hover {
+    transform: scale(1.01);
+  }
+
+  .category-image-box:after {
+    content:"\A";
+    width:100%;
+    height:100%;
+    /* background: rgb(74,105,187, 0.4);*/
+    /*background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 39%, rgba(74,105,187,0.9346113445378151) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 39%, rgba(74,105,187,0.9346113445378151) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 39%, rgba(74,105,187,0.9346113445378151) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#4a69bb",GradientType=1);*/
+    /*background: linear-gradient(
+      rgba(74,105,187, 0.5),
+      rgba(0, 0, 0, 0.5)
+    )*/
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 39%, rgba(74,105,187,0.5) 100%);
+    position:absolute;
+    top:0;
+    left:0;
+    transition: all 0.3s ease;
+  }
+
+  .category-image-box:hover:after {
+    background: rgba(255, 0, 0, 0);
+    transition: all 0.3s ease;
+  }

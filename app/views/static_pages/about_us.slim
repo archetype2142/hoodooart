@@ -1,0 +1,11 @@
+.container.relative.px-4
+  .flex.sm:flex-row.justify-between.md:mb-20.flex-col
+    = render(BreadcrumbsComponent.new(\
+      crumbs: [ \
+        { text: t('home'), url: root_path }, \
+        { text: t('about_us') }, \
+      ]) \
+    )
+
+  p.leading-8
+    = t('about_us_description').html_safe

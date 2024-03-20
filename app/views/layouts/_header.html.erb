@@ -1,0 +1,110 @@
+<nav class="relative px-4 py-4 bg-white shadow-md z-50">
+  <div class="container flex justify-between mx-auto">
+    <a class="text-3xl font-bold leading-none" href="/">
+      <h1 class="text-lg font-semibold text-gray-800"> Hoodooart </h1>
+    </a>
+    <div class="lg:hidden flex">
+      <span class="bg-royalblue text-white px-2 py-2">
+        <% if I18n.locale == :en %>
+          <%= link_to 'PL', { locale: :pl }, class: 'navbar-item' %>
+        <% end %>
+        <% if I18n.locale == :pl %>
+          <%= link_to 'EN', { locale: :en }, class: 'navbar-item' %>
+        <% end %>
+      </span>
+      <button class="navbar-burger flex items-center text-blue-600 p-3">
+        <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </button>
+    </div>
+    <ul class="container hidden top-1/2 transform lg:flex lg:items-center lg:w-auto lg:space-x-6">
+      <li>
+        <%= link_to root_path, class: 'text-gray-700 hover:text-gray-900' do %>
+          <span> <%= t('home') %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to products_path, class: 'text-gray-700 hover:text-gray-900' do %>
+          <span> <%= t('products') %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to about_path, class: 'text-gray-700 hover:text-gray-900' do %>
+          <span> <%= t('about_us') %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to contact_path, class: 'text-gray-700 hover:text-gray-900' do %>
+          <span> <%= t('contact') %> </span>
+        <% end %>
+      </li>
+      <li class="bg-royalblue text-white px-2 py-1">
+        <% if I18n.locale == :en %>
+          <%= link_to 'PL', { locale: :pl }, class: 'navbar-item' %>
+        <% end %>
+        <% if I18n.locale == :pl %>
+          <%= link_to 'EN', { locale: :en }, class: 'navbar-item' %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="navbar-menu relative z-50 hidden">
+  <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+  <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+    <div class="flex items-center mb-8">
+      <a class="mr-auto text-3xl font-bold leading-none" href="#">
+        <h1 class="text-lg font-semibold text-gray-800"> Hoodooart </h1>
+      </a>
+      <button class="navbar-close">
+        <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div>
+      <ul>
+        <li class="mb-3">
+          <%= link_to root_path, class: 'text-gray-700 hover:text-gray-900' do %>
+            <span> <%= t('home') %> </span>
+          <% end %>
+        </li>
+        <li class="mb-3">
+          <%= link_to products_path, class: 'text-gray-700 hover:text-gray-900' do %>
+            <span> <%= t('products') %> </span>
+          <% end %>
+        </li>
+        <li class="mb-3">
+          <%= link_to about_path, class: 'text-gray-700 hover:text-gray-900' do %>
+            <span> <%= t('about_us') %> </span>
+          <% end %>
+        </li>
+        <li class="mb-3">
+          <%= link_to contact_path, class: 'text-gray-700 hover:text-gray-900' do %>
+            <span> <%= t('contact') %> </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-auto">
+      <p class="my-4 text-xs text-center text-gray-400">
+        <span>&copy; 2024 Hoodooart. All rights reserved.</span>
+      </p>
+    </div>
+  </nav>
+</div>
+
+<script>
+  var burger = document.querySelector('.navbar-burger');
+  var menu = document.querySelector('.navbar-menu');
+
+  burger.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+
+  var close = document.querySelector('.navbar-close');
+  var backdrop = document.querySelector('.navbar-backdrop');
+
+  close.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+  backdrop.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+</script>
