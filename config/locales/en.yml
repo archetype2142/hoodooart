@@ -24,3 +24,17 @@ en:
   price: Price
   quantity: Quantity
   edit: Edit
+  consent_1: I hereby express my consent to the processing by Hoodooart of my personal data provided in the contact form above for the purpose of receiving an answer related to the matter indicated in the contact form, including to transfer the information to the provided email address or if the phone number was provided, to transfer the information by phone to the indicated phone number.
+  consent_2: I hereby express my consent to the processing by Hoodooart of my personal data provided in the contact form above for the purpose of direct marketing of the services of Hoodooart, including sending a commercial information within the meaning of Art. 10(2) of the Act on Electronic Services (Polish Journal of Laws of 2002 No. 144, item 1204, as amended) to the email address indicated by me.
+  first_name: First name
+  last_name: Last name
+  nip: NIP
+  company_name: Company name
+  custom_message: Custom message
+  phone_number: Phone number
+  send_inquiry: Send inquiry
+  contact_us: Contact us
+  get_in_touch: Get in touch
+  fill_to_contact: Fill in the form to contact us
+  submit: Sumbit
+

@@ -1,20 +1,12 @@
-
 section.homepage-header.mt-5 class="bg-white text-white"
   .py-8.px-14.max-w-screen-xl.lg:py-48.w-full.mx-auto
     .w-full.flex.justify-center.flex-col
       div.text-center
         h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
           span = I18n.t('welcome')
-
         p.font-normal.text-xl.text-white.leading-relaxed.mb-12 = t('wholesale_&_importer')
-
         a.px-6.py-4.bg-royalblue.text-white.font-semibold.text-lg.rounded-xl.hover:bg-blue-900.transition.ease-in-out.duration-500 href="/products" = t('all_products')
-
         div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
-        /a href="/products" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-royalblue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-            span = t('all_products')
-            svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"
-              path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"
 
 h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
 .mt-8.px-2.md:px-0.columns-2.gap-5.sm:columns-2.sm:gap-8.md:columns-3.lg:columns-4
@@ -25,6 +17,49 @@ h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
           - if category.image.attached?
             = image_tag category.image, class: 'image-category rounded-lg object-cover'
         .absolute.centered-text.font-semibold.text-2xl.text-white.p-4 = category.title.upcase
+
+section.contact.mt-4.mx-2
+  .relative.flex.items-top.bg-royalblue.sm:items-center.sm:pt-0.rounded-lg.text-white
+    .w-full.sm:px-6.lg:px-8
+      .py-6.overflow-hidden
+        .grid.grid-cols-1.md:grid-cols-2
+          .p-6.mr-2.sm:rounded-lg
+            h1.text-4xl.sm:text-5xl.font-extrabold.tracking-tight = t('get_in_touch')
+            p.text-normal.text-lg.sm:text-2xl.font-medium.mt-2 = t('fill_to_contact')
+            .flex.items-center.mt-8
+              svg.w-8.h-8.text-gray-500[fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"]
+              .ml-4.text-md.tracking-wide.font-semibold.w-80
+                a href="https://maps.app.goo.gl/jYxnDV2uyWX1s5gf7"
+                  span GD Poland International 
+                  br
+                  span ul.Nadrzeczna 16, 05-552
+                  br
+                  span Wólka Kosowska Hala 1, A14a
+
+            .flex.items-center.mt-4
+              svg.w-8.h-8[fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"]
+              .ml-4.text-md.tracking-wide.font-semibold.w-40 
+                a href="tel:+48 797 437 661" +48 797 437 661
+            .flex.items-center.mt-2
+              svg.w-8.h-8[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"]
+                path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"]
+              .ml-4.text-md.tracking-wide.font-semibold.w-40
+                a href="mailto:amin@hoodooart.com" amin@hoodooart.com
+          form.p-6.flex.flex-col.justify-center
+            .flex.flex-col
+              label.hidden[for="name"] = I18n.t('full_name')
+              input#name.text-gray-500.w-100.mt-2.py-3.px-3.rounded-lg.bg-white.border.border-gray-400.font-semibold.focus:border-indigo-500.focus:outline-none[type="name" name="name" placeholder="Full Name"]
+            .flex.flex-col.mt-2
+              label.hidden[for="email"] = I18n.t('email')
+              input#email.text-gray-500.w-100.mt-2.py-3.px-3.rounded-lg.bg-white.border.border-gray-400.font-semibold.focus:border-indigo-500.focus:outline-none[type="email" name="email" placeholder="Email"]
+            .flex.flex-col.mt-2
+              label.hidden[for="tel"] = I18n.t('phone_number')
+              input#tel.text-gray-500.w-100.mt-2.py-3.px-3.rounded-lg.bg-white.border.border-gray-400.dark:border-gray-700.font-semibold.focus:border-indigo-500.focus:outline-none[type="tel" name="tel" placeholder="+48 177 188 427"]
+            
+              button.px-4.py-2.rounded.border.border-gray-300.focus:outline-none.focus:border-royalblue.mt-2.hover:bg-royalblue.hover:text-white.hover:cursor-pointer type="submit" = I18n.t('submit')
 
 css:
   @media only screen and (max-width: 600px) {

@@ -29,7 +29,7 @@
           
         .flex.justify-center.flex-col
           = form_with(url: modify_product_path(product_id: @product.id), method: :put, data: { turbo: false }) do
-            = render(QuantityInputComponent.new(quantity: cookies[@product.id] || 0))
+            = render(QuantityInputComponent.new(quantity: (cookies[@product.id] || 0), name: 'quantity'))
             .mt-2
             button.w-full.px-6.py-2.bg-royalblue.text-white.rounded-md.hover:bg-blue-900.transition.ease-in-out.duration-500 type="submit"
               .text-center

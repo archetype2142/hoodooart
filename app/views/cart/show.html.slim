@@ -22,9 +22,50 @@
               th scope="row" class="px-6 py-4 font-medium whitespace-nowrap" = product.sku
               td class="px-6 py-4" = product.title
               td class="px-6 py-4" = product.price
-              td class="px-6 py-4" = render(QuantityInputComponent.new(quantity: cookies[product.id] || 0)) 
+              td class="px-6 py-4" = render(QuantityInputComponent.new(quantity: (cookies[product.id] || 0), name: "products[#{product.id}]"))
               td class="px-6 py-4 text-right"
                 = link_to destroy_product_path(product_id: product.id), method: :delete, data: { "turbo-method": :delete }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" do
                   svg fill="#cc0000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 485 485" xml:space="preserve"
                     rect x="67.224" width="350.535" height="71.81"
                     path d="M417.776,92.829H67.237V485h350.537V92.829H417.776z M165.402,431.447h-28.362V146.383h28.362V431.447z M256.689,431.447 h-28.363V146.383h28.363V431.447z M347.97,431.447h-28.361V146.383h28.361V431.447z"
+
+  .w-full.bg-white.border-b.bg-white.shadow-md.px-6.py-3.mt-4.sm:rounded-lg
+    b = I18n.t('send_inquiry')
+    hr.my-4
+    form
+      .flex.flex-wrap.-mx-3.mb-6
+        .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-first-name"] = I18n.t('first_name')
+          input#grid-first-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white[required type="text" placeholder="Jane"]
+        .w-full.md:w-1/2.px-3
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-last-name"] = I18n.t('first_name')
+          input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Doe"]
+      .flex.flex-wrap.-mx-3.mb-6
+        .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-company-name"] = I18n.t('company_name')
+          input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Hoodooart"]
+        .w-full.md:w-1/2.px-3
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-nip"] = I18n.t('nip')
+          input#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="29412324"]
+      .flex.flex-wrap.-mx-3.mb-6
+        .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-phone-number"] = I18n.t('phone_number')
+          input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[required type="text" placeholder="+48 577 588 124"]
+        .w-full.md:w-1/2.px-3
+          label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-message"] = I18n.t('custom_message')
+          textarea#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="textarea" placeholder=""]
+          p.text-gray-600.text-xs.italic = I18n.t('custom_message')
+      .flex.justify-between.flex-col.gap-2.md:flex-row
+        div.md:w-2/3
+          .flex.items-center.mb-4
+            input#default-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+            label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="default-checkbox"] = I18n.t('consent_1')
+          .flex.items-center
+            input#checked-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+            label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="checked-checkbox"] = I18n.t('consent_2')
+        div
+          button.px-6.py-2.bg-royalblue.text-white.rounded-md.hover:bg-blue-900.transition.ease-in-out.duration-500 type="submit"
+            .text-center
+              span = I18n.t('send_inquiry')
+
+      

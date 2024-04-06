@@ -32,3 +32,33 @@ pl:
     i przystępna cena - zrób zakupy u nas już dziś."
   contact_us: Skontaktuj się z nami
   address: Adres
+  cart: Wózek
+  add_to_cart: Dodaj do koszyka
+  wholesale_&_importer: Hurtownik i importer wyrobów szklanych i sprzętu gospodarstwa
+    domowego
+  recommended_products: Zalecane produkty
+  name: Nazwa
+  price: Cena
+  quantity: Ilość
+  edit: Edytuj
+  consent_1: Wyrażam zgodę na przetwarzanie przez Hoodooart moich danych osobowych
+    podanych w powyższym formularzu kontaktowym w celu otrzymania odpowiedzi związanej
+    ze sprawą wskazaną w formularzu kontaktowym, w tym na przekazanie informacji na
+    podany adres e-mail lub w przypadku podania numeru telefonu, na przekazanie informacji
+    drogą telefoniczną na wskazany numer telefonu.
+  consent_2: Wyrażam zgodę na przetwarzanie przez Hoodooart moich danych osobowych
+    podanych w powyższym formularzu kontaktowym w celu marketingu bezpośredniego usług
+    Hoodooart, w tym na przesyłanie informacji handlowej w rozumieniu art. 10 ust.
+    2 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (t.j.
+    Dz. 10 ust. 2 ustawy o świadczeniu usług drogą elektroniczną (Dz. U. z 2002 r.
+    Nr 144, poz. 1204 z późn. zm.) na wskazany przeze mnie adres e-mail.
+  first_name: Imię
+  last_name: Nazwisko
+  nip: NIP
+  company_name: Nazwa firmy
+  custom_message: Wiadomość niestandardowa
+  phone_number: Numer telefonu
+  send_inquiry: Wyślij zapytanie
+  get_in_touch: Skontaktuj się z nami
+  fill_to_contact: Wypełnij formularz, aby się z nami skontaktować
+  submit: Sumbit
