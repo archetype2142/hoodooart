@@ -7,14 +7,72 @@
       ]) \
     )
 
-  h1.text-xl = t('address')
+  .flex.gap-5.flex-col.md:flex-row
+    .bg-white.border-b.bg-white.shadow-md.px-6.py-3.mt-4.sm:rounded-lg.w-full.md:w-1/2
+      b = I18n.t('send_inquiry')
+      hr.my-4
+      form
+        .flex.flex-wrap.-mx-3.mb-6
+          .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-first-name"] = I18n.t('first_name')
+            input#grid-first-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white[required type="text" placeholder="Jane"]
+          .w-full.md:w-1/2.px-3
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-last-name"] = I18n.t('first_name')
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Doe"]
+        .flex.flex-wrap.-mx-3.mb-6
+          .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-company-name"] = I18n.t('company_name')
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Hoodooart"]
+          .w-full.md:w-1/2.px-3
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-nip"] = I18n.t('nip')
+            input#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="29412324"]
+        .flex.flex-wrap.-mx-3.mb-6
+          .w-full.md:w-1/2.px-3.mb-6.md:mb-0
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-phone-number"] = I18n.t('phone_number')
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[required type="text" placeholder="+48 577 588 124"]
+          .w-full.md:w-1/2.px-3
+            label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-message"] = I18n.t('custom_message')
+            textarea#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="textarea" placeholder=""]
+            p.text-gray-600.text-xs.italic = I18n.t('custom_message')
+        .flex.items-center.mb-4
+          input#default-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+          label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="default-checkbox"] = I18n.t('consent_1')
+        .flex.items-center
+          input#checked-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+          label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="checked-checkbox"] = I18n.t('consent_2')
+        button.mt-3.px-6.py-2.bg-royalblue.text-white.rounded-md.hover:bg-blue-900.transition.ease-in-out.duration-500 type="submit"
+          .text-center
+            span = I18n.t('send_inquiry')
+    .w-full.md:w-1/2.bg-white.border-b.bg-white.shadow-md.px-6.py-3.mt-4.sm:rounded-lg
+      b = t('address')
+      hr.my-4
+      .flex.justify-between
+        .flex.items-center.mt-4
+          svg.w-8.h-8[fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"]
+            path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"]
+          .ml-4.text-md.tracking-wide.w-40 
+            a.hover:text-royalblue href="tel:+48 797 437 661" +48 797 437 661
+            br
+            a.hover:text-royalblue href="tel:+48 573 128 882" +48 573 128 882
+        .flex.items-center.mt-2
+          svg.w-8.h-8[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"]
+            path[stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"]
+          .ml-4.text-md.tracking-wide.w-40
+            a.hover:text-royalblue href="mailto:amin@hoodooart.com" amin@hoodooart.com
+            br
+            a.hover:text-royalblue href="mailto:ali@hoodooart.com" ali@hoodooart.com
+        .flex.items-center.mt-3
+          svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+            path fill="black" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          .ml-4.text-md.tracking-wide.w-40
+            a.hover:text-royalblue href="https://www.instagram.com/hoodooart23" hoodooart23
 
-  p.font-semibold.mb-5
-    a.hover:text-royalblue href="https://maps.app.goo.gl/jYxnDV2uyWX1s5gf7"
-      p 
-        span GD Poland International 
-        br ul.Nadrzeczna 16, 05-552 Wólka Kosowska
-        | Hala 1, A14a
+      p.font-semibold.mb-5
+        a.hover:text-royalblue href="https://maps.app.goo.gl/jYxnDV2uyWX1s5gf7"
+          p 
+            span GD Poland International 
+            br ul.Nadrzeczna 16, 05-552 Wólka Kosowska
+            | Hala 1, A14a
 
 
-  iframe.w-full.h-96.mt-5 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.196721353192!2d20.852298577022736!3d52.057941570335544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471931658b1e4053%3A0xe0c84aaf82be148c!2sNadrzeczna%2016%2C%2005-552%20W%C3%B3lka%20Kosowska!5e0!3m2!1sen!2spl!4v1710603736968!5m2!1sen!2spl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      iframe.w-full.h-96.mt-5 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.196721353192!2d20.852298577022736!3d52.057941570335544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471931658b1e4053%3A0xe0c84aaf82be148c!2sNadrzeczna%2016%2C%2005-552%20W%C3%B3lka%20Kosowska!5e0!3m2!1sen!2spl!4v1710603736968!5m2!1sen!2spl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
