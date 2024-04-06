@@ -24,7 +24,7 @@ class CartController < ApplicationController
   		cookies[:products] = cookies[:products].gsub(params[:product_id], '')
   	end
 
-  	redirect_to product_path(@product)
+  	redirect_to product_path(@product), flash: { message: I18n.t('updated_cart') }
   end
 
   private
