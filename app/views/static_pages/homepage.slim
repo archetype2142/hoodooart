@@ -1,18 +1,20 @@
 
-section.homepage-header class="bg-white text-white"
-  .py-8.px-14.max-w-screen-xl.lg:py-48
-    h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
-      span Welcome to </br> Hoodooart
+section.homepage-header.mt-5 class="bg-white text-white"
+  .py-8.px-14.max-w-screen-xl.lg:py-48.w-full.mx-auto
+    .w-full.flex.justify-center.flex-col
+      div.text-center
+        h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
+          span = I18n.t('welcome')
 
-    p.font-normal.text-xl.text-white.leading-relaxed.mb-12 = t('wholesale_&_importer')
+        p.font-normal.text-xl.text-white.leading-relaxed.mb-12 = t('wholesale_&_importer')
 
-    a.px-6.py-4.bg-royalblue.text-white.font-semibold.text-lg.rounded-xl.hover:bg-blue-900.transition.ease-in-out.duration-500 href="/products" = t('all_products')
+        a.px-6.py-4.bg-royalblue.text-white.font-semibold.text-lg.rounded-xl.hover:bg-blue-900.transition.ease-in-out.duration-500 href="/products" = t('all_products')
 
-    div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
-    /a href="/products" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-royalblue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-        span = t('all_products')
-        svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"
-          path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"
+        div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
+        /a href="/products" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-royalblue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            span = t('all_products')
+            svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"
+              path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"
 
 h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
 .mt-8.px-2.md:px-0.columns-2.gap-5.sm:columns-2.sm:gap-8.md:columns-3.lg:columns-4

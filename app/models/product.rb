@@ -9,6 +9,8 @@ class Product < ApplicationRecord
 
   validates :title, presence: true
 
+  monetize :price_cents
+
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "description", "hide", "id", "id_value", "price_cents", "title", "updated_at"]
   end

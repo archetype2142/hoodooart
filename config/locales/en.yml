@@ -1,4 +1,7 @@
 en:
+  cart: Cart
+  add_to_cart: Add to cart
+  welcome: Welcome to hoodooart
   all_products: All products
   search_products: Search products
   view_details: View details
@@ -17,3 +20,7 @@ en:
   address: Address
   wholesale_&_importer: Wholesaler & Importer of Glassware and Home Appliances
   recommended_products: Recommended Products
+  name: Name
+  price: Price
+  quantity: Quantity
+  edit: Edit

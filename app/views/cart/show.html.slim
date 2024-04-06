@@ -1,0 +1,30 @@
+.container.relative.px-4
+  .flex.sm:flex-row.justify-between.md:mb-20.flex-col
+    = render(BreadcrumbsComponent.new(\
+      crumbs: [ \
+        { text: t('home'), url: root_path }, \
+        { text: t('cart') }, \
+      ]) \
+    )
+
+  .relative.overflow-x-auto.shadow-md.sm:rounded-lg
+    table.w-full.text-sm.text-left.rtl:text-right.text-gray-500
+      thead.text-xs.text-white.uppercase.bg-royalblue
+        tr
+          th scope="col" class="px-6 py-3" SKU
+          th scope="col" class="px-6 py-3" = I18n.t('name')
+          th scope="col" class="px-6 py-3" = I18n.t('price')
+          th scope="col" class="px-6 py-3" = I18n.t('quantity')
+          th scope="col" class="px-6 py-3" = I18n.t('edit')
+        tbody
+          - Product.where(id: cookies[:products].split(',')).each do |product|
+            tr.bg-white.border-b.hover:bg-gray-50
+              th scope="row" class="px-6 py-4 font-medium whitespace-nowrap" = product.sku
+              td class="px-6 py-4" = product.title
+              td class="px-6 py-4" = product.price
+              td class="px-6 py-4" = render(QuantityInputComponent.new(quantity: cookies[product.id] || 0)) 
+              td class="px-6 py-4 text-right"
+                = link_to destroy_product_path(product_id: product.id), method: :delete, data: { "turbo-method": :delete }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" do
+                  svg fill="#cc0000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 485 485" xml:space="preserve"
+                    rect x="67.224" width="350.535" height="71.81"
+                    path d="M417.776,92.829H67.237V485h350.537V92.829H417.776z M165.402,431.447h-28.362V146.383h28.362V431.447z M256.689,431.447 h-28.363V146.383h28.363V431.447z M347.97,431.447h-28.361V146.383h28.361V431.447z"

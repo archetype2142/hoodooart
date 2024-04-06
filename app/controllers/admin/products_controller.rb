@@ -43,6 +43,7 @@ module Admin
     def resource_params
       params.require(:product).
       permit(
+        :sku,
         :title_en,
         :title_pl,
         :description_en,
