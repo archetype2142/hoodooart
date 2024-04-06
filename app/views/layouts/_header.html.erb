@@ -40,10 +40,14 @@
       </li>
       <li>
         <div class="group">
-          <%= link_to products_path, class: 'text-white hover:text-white' do %>
+          <span class="text-white hover:text-white flex items-center" id="prod-dropdown">
             <span> <%= t('products') %> </span>
-          <% end %>
-          <div class="invisible absolute z-50 flex w-full flex-col bg-gray-100 text-gray-800 shadow-xl group-hover:visible w-40">
+             <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </span>
+
+          <div class="hidden absolute z-50 flex w-full flex-col bg-gray-100 text-gray-800 shadow-xl w-40" id="prod-body">
             <% Category.all.each do |category| %>
               <%= link_to products_path(q: { categories_title_cont: category.title.downcase }) do %>
                 <span class="hover:bg-royalblue my-1 block border-b border-gray-100 py-1 px-4 font-semibold text-gray-500 hover:text-white md:mx-2">
@@ -153,4 +157,5 @@
 
 
   document.querySelectorAll('.shopping_cart_total').forEach(e => { e.innerHTML = getCookieValue('cart') })
+
 </script>
