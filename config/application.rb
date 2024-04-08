@@ -29,6 +29,6 @@ module Hoodooart
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
-    config.hosts << "6c94-2a02-a319-8247-6780-b84f-ac8-2f41-2b95.ngrok-free.app"
+    config.hosts << "Hoodooart.com"
   end
 end
