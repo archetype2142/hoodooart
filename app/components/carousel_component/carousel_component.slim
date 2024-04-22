@@ -1,0 +1,29 @@
+div data-controller="carousel-component" style="height: fit-content; max-height: 70vh; overflow: hidden;"
+  .glide.multi
+    .glide__track data-glide-el="track"
+      ul.glide__slides
+        - @images.each do |image|
+          li = image_tag image, class: 'glide__slide'
+
+
+css:
+  @media only screen and (max-width: 768px) {
+    .glide__slides li img {
+      display: block;
+      min-width: 500px;
+      min-height: 400px;
+      max-height: 400px;
+      width: auto;
+      height: auto; 
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .glide__slides li img {
+      display: block;
+      min-width: 1500px;
+      min-height: 400px;
+      width: auto;
+      height: auto;
+    }
+  }

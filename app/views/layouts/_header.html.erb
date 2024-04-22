@@ -40,12 +40,14 @@
       </li>
       <li>
         <div class="group">
-          <span class="text-white hover:text-white flex items-center" id="prod-dropdown">
-            <span> <%= t('products') %> </span>
-             <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-            </svg>
-          </span>
+          <a href="/products">
+            <span class="cursor-pointer text-white hover:text-white flex items-center" id="prod-dropdown">
+              <span> <%= t('products') %> </span>
+               <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </span>
+          </a>
 
           <div class="hidden absolute z-50 flex flex-col bg-gray-100 text-gray-800 shadow-xl w-40" id="prod-body">
             <% Category.all.each do |category| %>
@@ -149,7 +151,6 @@
 
   close.addEventListener('click', function() { menu.classList.toggle('hidden'); });
   backdrop.addEventListener('click', function() { menu.classList.toggle('hidden'); });
-
 
   const getCookieValue = (name) => (
     document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''

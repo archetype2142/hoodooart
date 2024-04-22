@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import 'actiontext.css';
 
 .pagy {
   @apply flex space-x-1 font-semibold text-sm;
@@ -27,4 +27,3 @@
     }
   }
 }
-@import 'actiontext.css';

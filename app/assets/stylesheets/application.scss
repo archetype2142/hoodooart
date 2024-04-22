@@ -1,4 +1,5 @@
 
+
 body {
 	font-family: 'Urbanist';
 	color: #121414;
@@ -85,4 +86,24 @@ nav li:hover {
 
 .attachment__caption {
   color: #808080;
+}
+
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 0.5em;
+      column-count: 1;
+    }
+    .masonry-sm {
+      column-gap: 0.5em;
+      column-count: 2;
+    }
+    .masonry-md {
+      column-gap: 0.5em;
+      column-count: 4;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
 }

@@ -12,8 +12,11 @@ document.addEventListener("turbo:load", (e) => {
   var prod_button = document.querySelector('#prod-dropdown');
   var prod_dropdown = document.querySelector('#prod-body');
 
-  prod_button.addEventListener('click', e => {
-    console.log(prod_dropdown.classList)
+  prod_button.addEventListener('mouseover', e => {
     prod_dropdown.classList.toggle('hidden');
+  })
+
+  prod_dropdown.addEventListener('mouseleave', e => {
+    prod_dropdown.classList.add('hidden');
   })
 });
