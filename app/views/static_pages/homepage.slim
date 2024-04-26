@@ -21,7 +21,7 @@ css:
 
 section.homepage-header.relative.bg-white.text-white.mt-5
   = render(CarouselComponent.new((1..11).to_a.map { |idx| "slider/#{idx}.jpeg" } ))
-  .absolute.mx-auto.z-10.h-fit.w-full.mt-28 style="top: 0; left: 0; bottom: 0; right: 0; margin: auto; background: ;"
+  .absolute.mx-auto.z-10.h-fit.w-full.mt-28 style="top: 0; left: 0; bottom: 0; right: 0; margin: auto;"
     .w-full.flex.justify-center.flex-col
       div.text-center.drop-shadow-lg
         h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
