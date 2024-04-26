@@ -19,16 +19,16 @@ css:
 
 /= render(CarouselComponent.new((1..11).to_a.map { |idx| "slider/#{idx}.jpeg" } ))
 
-section.homepage-header.relative class="bg-white text-white"
+section.homepage-header.relative.bg-white.text-white.mt-5
   = render(CarouselComponent.new((1..11).to_a.map { |idx| "slider/#{idx}.jpeg" } ))
   .absolute.mx-auto.z-10.h-fit.w-full.mt-28 style="top: 0; left: 0; bottom: 0; right: 0; margin: auto; background: ;"
     .w-full.flex.justify-center.flex-col
-      div.text-center
+      div.text-center.drop-shadow-lg
         h1.font-semibold.text-4xl.md:text-6xl.lg:text-7xl.text-white.leading-normal.mb-6 
           span = I18n.t('welcome')
         p.font-normal.text-xl.text-white.leading-relaxed.mb-12 = t('wholesale_&_importer')
         a.px-6.py-4.bg-royalblue.text-white.font-semibold.text-lg.rounded-xl.hover:bg-blue-900.transition.ease-in-out.duration-500 href="/products" = t('all_products')
-        div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
+        .flex.flex-col.space-y-4.sm:flex-row.sm:justify-center.sm:space-y-0
 
 h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
 
