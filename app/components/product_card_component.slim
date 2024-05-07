@@ -5,7 +5,7 @@
         = render(BadgeComponent.new) do
           span.font-semibold = category.title
     - if @product.images.attached?
-      = image_tag @product.images.first
+      = image_tag @product.images.first.variant(:thumb)
     - else
       img class="image" src="https://cdn.animaapp.com/projects/65f351da56a3abcc939dbad8/releases/65f351fef81bfb374ad1743d/img/image@2x.png" alt="Image"
 
