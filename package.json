@@ -11,6 +11,7 @@
     "cypress": "^12.17.4",
     "esbuild": "^0.14.38",
     "imagesloaded": "^5.0.0",
+    "photoswipe": "^5.4.3",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

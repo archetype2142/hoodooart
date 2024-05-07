@@ -50,6 +50,7 @@ module Admin
         :description_pl,
         :price_cents,
         :hide,
+        category_ids: [],
         images: []
       )
     end

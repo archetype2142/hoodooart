@@ -1,5 +1,6 @@
 ---
 pl:
+  search_field: Wprowadź kod produktu
   welcome: Witamy w Hoodooart
   all_products: Wszystkie produkty
   search_products: Wyszukiwanie produktów
@@ -56,7 +57,7 @@ pl:
   last_name: Nazwisko
   nip: NIP
   company_name: Nazwa firmy
-  custom_message: Wiadomość niestandardowa
+  custom_message: Wiadomość
   phone_number: Numer telefonu
   send_inquiry: Wyślij zapytanie
   get_in_touch: Skontaktuj się z nami

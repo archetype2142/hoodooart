@@ -17,6 +17,7 @@ class ProductDashboard < Administrate::BaseDashboard
       end
     ),
     price_cents: Field::Number,
+    categories: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::Mobility::String,
@@ -41,6 +42,7 @@ class ProductDashboard < Administrate::BaseDashboard
     title
     description
     hide
+    categories
     images
     price_cents
     created_at
@@ -52,6 +54,7 @@ class ProductDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     sku
+    categories
     hide
     images
     price_cents
