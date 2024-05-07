@@ -11,8 +11,8 @@ export default class extends Controller {
     new Glide('.glide', {
       autoplay: 2000,
       wrapperWidth: 100,
-
-    }).mount()
+    }).mount();
   }
 }
 
+console.log('test');
