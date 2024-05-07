@@ -3,7 +3,6 @@ import Glide from "@glidejs/glide";
 import "@glidejs/glide/dist/css/glide.core.css"
 import "@glidejs/glide/dist/css/glide.theme.css"
 
-
 export default class extends Controller {
   static targets = [];
 
