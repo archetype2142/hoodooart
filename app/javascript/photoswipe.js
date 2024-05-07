@@ -8,3 +8,5 @@ const lightbox = new PhotoSwipeLightbox({
 });
 
 lightbox.init();
+
+console.log('test', lightbox);
