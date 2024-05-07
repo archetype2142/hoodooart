@@ -13,7 +13,7 @@ css:
 
   @media only screen and (min-width: 768px) {
     .masonry-md {
-      column-count: 4;
+      column-count: 3;
     }  
   }
 
@@ -33,7 +33,7 @@ section.homepage-header.relative.bg-white.text-white.mt-5
 h2.my-5.text-2xl.ml-2.md:text-left.text-center = t('categories')
 
 .masonry.masonry-sm.masonry-md.mx-2
-  - Category.all.order("random()").in_groups(4) do |categories|
+  - Category.all.order("random()").in_groups(3) do |categories|
     .rounded-lg.pt-1.break-inside
       - categories.each do |category|
         - next if category.nil?
