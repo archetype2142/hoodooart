@@ -13,7 +13,7 @@ class ButtonComponent < ApplicationComponent
   ].freeze
 
   BASE_CLASSES = %w[
-    inline-block mt-1 md:mt-4 px-4 py-2 rounded
+    inline-block mt-1 px-4 py-2 rounded
   ].freeze
 
   BUTTON_TYPE_MAPPINGS = {
