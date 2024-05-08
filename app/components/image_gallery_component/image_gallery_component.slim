@@ -2,7 +2,7 @@ div data-controller="image-gallery-component"
 .flex.justify-center.w-100
   .main-image.mb-5.rounded.w-full.md:w-96.h-96.object-cover.border.rounded-lg.border-royalblue#gallery--getting-started
     - if @product.images.attached?
-      = link_to @product.images.first.url, data: { 'pswp-width': '800', 'pswp-height': '800' } do
+      = link_to @product.images.first.url, data: { 'pswp-width': '1000', 'pswp-height': '800' } do
         = image_tag @product.images.first, class: 'rounded-lg w-full h-full object-cover', id: 'main_image'
 
 .flex.flex-row.gap-2.w-100.justify-center.flex-wrap#gallery--getting-started
