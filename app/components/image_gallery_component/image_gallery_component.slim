@@ -7,5 +7,5 @@ div data-controller="image-gallery-component"
 
 .flex.flex-row.gap-2.w-100.justify-center.flex-wrap#gallery--getting-started
   - @product.images.each do |image|
-    = link_to image.url, class: 'w-16 h-16 border rounded-lg border-royalblue', data: { 'pswp-width': '800', 'pswp-height': '800' } do
+    = link_to image.url, class: 'w-16 h-16 border rounded-lg border-royalblue', data: { 'pswp-width': '1000', 'pswp-height': '800' } do
       = image_tag image, class: 'rounded-lg w-full h-full object-cover image-thumbnail'
