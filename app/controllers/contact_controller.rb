@@ -11,11 +11,15 @@ class ContactController < ApplicationController
     params.permit(
       :first_name,
       :last_name,
+      :phone_number,
       :phone,
       :nip,
+      :custom_message,
       :message,
+      :company_name,
       :consent_1,
-      :consent_2
+      :consent_2,
+      products: [:sku, :price, :quantity, :name]
     )
   end
 end

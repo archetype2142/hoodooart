@@ -1,2 +1,14 @@
 - @params.each do |k, v|
-  p = "#{k}: #{v}"
+  - if k == 'products'
+    h1 REQUESTED PRODUCTS:
+
+    - v.each do |product|
+      b = ActionController::Base.helpers.strip_tags(product['name']).split.compact.join
+      p
+        span quantity: 
+        span = product['quantity']
+      p
+        span sku: 
+        span = product['sku']
+  - else
+    p = "#{k}: #{v}"
