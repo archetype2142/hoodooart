@@ -7,10 +7,9 @@ import { application } from "./application"
 import SwiperProducts from "./swiper_products"
 import QuantityInputController from "../../components/quantity_input_component/quantity_input_component_controller.js";
 import CarouselComponent from "../../components/carousel_component/carousel_component_controller.js";
+import ImageGalleryComponent from "../../components/image_gallery_component/image_gallery_component_controller.js";
 
 application.register("swiper-products", SwiperProducts)
 application.register("quantity-input-component", QuantityInputController)
 application.register("carousel-component", CarouselComponent)
-
-
-// '../../components/button_component/button_component_controller.js';
+application.register("image-gallery-component", ImageGalleryComponent)
