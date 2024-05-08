@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   put 'modify-product', to: 'cart#modify_product'
   get 'cart', to: 'cart#show'
   delete 'destroy-product', to: 'cart#destroy_product'
-
+  post 'contact', to: 'contact#create'
 
   get "up" => "rails/health#show", as: :rails_health_check
 end

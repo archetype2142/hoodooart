@@ -11,34 +11,34 @@
     .bg-white.border-b.bg-white.shadow-md.px-6.py-3.mt-4.sm:rounded-lg.w-full.md:w-1/2
       b = I18n.t('send_inquiry')
       hr.my-4
-      form
+      = form_with(url: contact_path, data: { turbo: false }) do
         .flex.flex-wrap.-mx-3.mb-6
           .w-full.md:w-1/2.px-3.mb-6.md:mb-0
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-first-name"] = I18n.t('first_name')
-            input#grid-first-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white[required type="text" placeholder="Jane"]
+            input#grid-first-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white[required type="text" placeholder="Jane" name="first_name"]
           .w-full.md:w-1/2.px-3
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-last-name"] = I18n.t('last_name')
-            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Doe"]
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Doe" name="last_name"]
         .flex.flex-wrap.-mx-3.mb-6
           .w-full.md:w-1/2.px-3.mb-6.md:mb-0
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-company-name"] = I18n.t('company_name')
-            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Hoodooart"]
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="Hoodooart" name="company_name"]
           .w-full.md:w-1/2.px-3
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-nip"] = I18n.t('nip')
-            input#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="29412324"]
+            input#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="text" placeholder="29412324" name="nip"]
         .flex.flex-wrap.-mx-3.mb-6
           .w-full.md:w-1/2.px-3.mb-6.md:mb-0
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-phone-number"] = I18n.t('phone_number')
-            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[required type="text" placeholder="+48 577 588 124"]
+            input#grid-last-name.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[required type="text" placeholder="+48 577 588 124" name="phone"]
           .w-full.md:w-1/2.px-3
             label.block.uppercase.tracking-wide.text-gray-700.text-xs.font-bold.mb-2[for="grid-message"] = I18n.t('custom_message')
-            textarea#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="textarea" placeholder=""]
+            textarea#grid-password.appearance-none.block.w-full.bg-gray-200.text-gray-700.border.border-gray-200.rounded.py-3.px-4.mb-3.leading-tight.focus:outline-none.focus:bg-white.focus:border-gray-500[type="textarea" placeholder="" name="message"]
             p.text-gray-600.text-xs.italic = I18n.t('custom_message')
         .flex.items-center.mb-4
-          input#default-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+          input#default-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" name="consent_1"]
           label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="default-checkbox"] = I18n.t('consent_1')
         .flex.items-center
-          input#checked-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" value=""]
+          input#checked-checkbox.w-4.h-4.text-blue-600.bg-gray-100.border-gray-300.rounded.focus:ring-blue-500.dark:focus:ring-blue-600.dark:ring-offset-gray-800.focus:ring-2.dark:bg-gray-700.dark:border-gray-600[required type="checkbox" name="consent_2"]
           label.ms-2.text-sm.font-medium.text-gray-900.dark:text-gray-300[for="checked-checkbox"] = I18n.t('consent_2')
         button.mt-3.px-6.py-2.bg-royalblue.text-white.rounded-md.hover:bg-blue-900.transition.ease-in-out.duration-500 type="submit"
           .text-center
