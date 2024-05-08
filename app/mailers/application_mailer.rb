@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'sales@hoodooart.com'
+  default from: 'amin@hoodooart.com'
   layout "mailer"
 
   def info(params)

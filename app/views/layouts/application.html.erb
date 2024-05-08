@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="h-full m-0" style="overflow-x: hidden !important;">
+<body class="h-full m-0">
   <%= render 'layouts/header' %>
 
   <% if flash.any? %>
@@ -48,7 +48,7 @@
     <% end %>
   <% end %>
 
-  <main class="container mx-auto md:px-5 min-h-full" style="overflow-x: hidden !important;">
+  <main class="container mx-auto md:px-5 min-h-full">
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
