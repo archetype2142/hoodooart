@@ -1,5 +1,6 @@
 ---
 pl:
+  email: Email
   search_field: Wprowadź kod produktu
   welcome: Witamy w Hoodooart
   all_products: Wszystkie produkty
@@ -13,24 +14,9 @@ pl:
   search: Wyszukiwanie
   categories: Kategorie
   clear_all: Wyczyść wszystko
-  about_us_description: "<span class='text-royalblue font-semibold'>HOODOOART</span>,
-    jesteśmy czymś więcej niż tylko firmą handlową; jesteśmy bramą do wyjątkowych
-    wyrobów szklanych i urządzeń domowych. Dzięki wnikliwemu spojrzeniu na jakość
-    i zaangażowaniu w przystępną cenę, udoskonaliliśmy sztukę pozyskiwania najlepszych
-    produktów z całego świata. </br> </br> Przez ponad dwie dekady doskonaliliśmy
-    nasze doświadczenie w branży wyrobów szklanych, nawiązując silne kontakty z renomowanymi
-    producentami na całym świecie. To rozległe doświadczenie pozwala nam wybierać
-    produkty, które nie tylko spełniają, ale i przekraczają Twoje oczekiwania. Niezależnie
-    od tego, czy chodzi o eleganckie szkło do rozrywki, czy praktyczne urządzenia
-    domowe do codziennego użytku, mamy wszystko, czego potrzebujesz. </br> </br> Ale
-    to, co naprawdę nas wyróżnia, to nasze niezachwiane zaangażowanie w oferowanie
-    bezkonkurencyjnych cen bez uszczerbku dla jakości. To nie tylko obietnica; to
-    nasz sposób na życie. Wierzymy, że każdy zasługuje na dostęp do produktów premium
-    bez rozbijania banku, a my jesteśmy tutaj, aby to urzeczywistnić. </br> </br>
-    Tak więc, niezależnie od tego, czy ulepszasz swoje niezbędne akcesoria kuchenne,
-    czy też dodajesz odrobinę wyrafinowania do swoich doznań kulinarnych, zaufaj HOODOOART,
-    aby zapewnić doskonałość na każdym kroku. Odkryj różnicę, jaką może zrobić jakość
-    i przystępna cena - zrób zakupy u nas już dziś."
+  about_us_description: "<span class='text-royalblue font-semibold'>Hoodooart</span>, to hurtownia z siedzibą w Polsce, specjalizująca się w sprzedaży wyrobów szklanych i zastawy stołowej. Dbając o jakość i przystępność cenową, udoskonaliliśmy sztukę pozyskiwania najlepszych produktów z całego świata.
+                         Ale to, co naprawdę nas wyróżnia, to niezachwiane zaangażowanie w oferowanie bezkonkurencyjnych cen bez uszczerbku dla jakości.
+                         Odkryj różnicę, jaką może mieć jakość i przystępna cena – skontaktuj się z nami już dziś."
   contact_us: Skontaktuj się z nami
   address: Adres
   cart: Wózek

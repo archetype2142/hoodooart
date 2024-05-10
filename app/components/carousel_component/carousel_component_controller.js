@@ -8,7 +8,7 @@ export default class extends Controller {
 
   connect() {
     new Glide('.glide', {
-      // autoplay: 2000,
+      autoplay: 2000,
       wrapperWidth: 100,
     }).mount();
   }

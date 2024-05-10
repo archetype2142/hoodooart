@@ -13,6 +13,7 @@ class ContactController < ApplicationController
       :last_name,
       :phone_number,
       :phone,
+      :email,
       :nip,
       :custom_message,
       :message,
