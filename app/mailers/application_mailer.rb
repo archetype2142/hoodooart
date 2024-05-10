@@ -1,3 +1,5 @@
+::OpenSSL::SSL::VERIFY_PEER = ::OpenSSL::SSL::VERIFY_NONE
+
 class ApplicationMailer < ActionMailer::Base
   default from: 'amin@hoodooart.com'
   layout "mailer"

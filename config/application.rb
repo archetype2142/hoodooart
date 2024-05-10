@@ -32,5 +32,3 @@ module Hoodooart
     config.hosts << "Hoodooart.com"
   end
 end
-
-::OpenSSL::SSL::VERIFY_PEER = ::OpenSSL::SSL::VERIFY_NONE

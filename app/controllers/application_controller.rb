@@ -1,3 +1,5 @@
+::OpenSSL::SSL::VERIFY_PEER = ::OpenSSL::SSL::VERIFY_NONE
+
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include ActiveStorage::SetCurrent
