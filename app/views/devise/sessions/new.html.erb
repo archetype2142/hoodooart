@@ -1,0 +1,43 @@
+<div class="container relative px-4 mx-auto">
+  <div class="flex sm:flex-row justify-between md:mb-20 flex-col">
+    <%= render(BreadcrumbsComponent.new(
+      crumbs: [
+        { text: t('home'), url: root_path },
+        { text: t('sign_in') },
+      ])
+    ) %>
+  </div>
+
+  <section>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+        <div class="p-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl mb-5">
+            <%= I18n.t('sign_in') %>
+          </h1>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "space-y-4 md:space-y-6", data: { turbo: false }) do |f| %>
+            <div>
+              <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5", required: true %>
+            </div>
+            <div class="mt-2">
+              <%= f.label :password, I18n.t('password'), class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" %>
+            </div>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex items-start">
+                <div class="text-sm">
+                  <%= f.check_box :remember_me, class: 'w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300' %>
+                  <%= f.label :remember_me, class: 'text-gray-500' %>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="my-5 px-6 py-2 bg-royalblue text-white font-semibold rounded-lg hover:bg-blue-900 transition ease-in-out duration-500"><%= I18n.t('sign_in') %></button>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

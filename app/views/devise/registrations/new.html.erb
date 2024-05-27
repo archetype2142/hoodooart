@@ -1,0 +1,42 @@
+<div class="container relative px-4 mx-auto">
+  <div class="flex sm:flex-row justify-between md:mb-20 flex-col">
+    <%= render(BreadcrumbsComponent.new(
+      crumbs: [
+        { text: t('home'), url: root_path },
+        { text: t('sign_up') },
+      ])
+    ) %>
+  </div>
+
+  <section>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+        <div class="p-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl mb-5">
+            <%= I18n.t('sign_up') %>
+          </h1>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "space-y-4 md:space-y-6", data: { turbo: false }) do |f| %>
+            <div>
+              <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5", required: true %>
+            </div>
+            <div class="mt-2">
+              <%= f.label :phone_number, I18n.t('phone_number'), class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5", required: true %>
+            </div>
+            <div class="mt-2">
+              <%= f.label :password, I18n.t('password'), class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" %>
+              <% if @minimum_password_length %>
+                <span class="text-sm text-gray-600">(<%= @minimum_password_length %> characters minimum)</span>
+              <% end %>
+            </div>
+            <button type="submit" class="my-5 px-6 py-2 bg-royalblue text-white font-semibold rounded-lg hover:bg-blue-900 transition ease-in-out duration-500"><%= I18n.t('sign_up') %></button>
+          <% end %>
+
+         <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,6 +1,21 @@
 ---
 pl:
+  sign_out: Wyloguj się
+  devise:
+    registrations:
+      signed_up: Zarejestrowano się pomyślnie
+    sessions:
+      user:
+        signed_in: Zalogowano się pomyślnie
+        signed_out: Wylogowano się pomyślnie
+    failure:
+      already_authenticated: Już się zalogowałem
+
+  password: Hasło
+  phone_number: Numer telefonu
   email: Email
+  sign_up: Zapisać się
+  sign_in: Zalogować się
   search_field: Wprowadź kod produktu
   welcome: Witamy w Hoodooart
   all_products: Wszystkie produkty

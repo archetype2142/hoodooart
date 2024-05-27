@@ -13,6 +13,8 @@ class Product < ApplicationRecord
 
   monetize :price_cents
 
+  has_many :user_products
+  has_many :user, through: :user_products 
 
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "description", "hide", "id", "id_value", "price_cents", "title", "updated_at", "sku"]

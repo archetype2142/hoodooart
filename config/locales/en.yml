@@ -1,4 +1,9 @@
 en:
+  sign_out: Sign out
+  password: Password
+  phone_number: Phone number
+  sign_in: Sign in
+  sign_up: Sign up
   email: Email
   sent_mail: Thank you for contacting us, you'll recieve a response soon!
   search_field: Enter product code

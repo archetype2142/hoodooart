@@ -46,3 +46,4 @@ end
 
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem "bootsnap", require: false
+gem "devise", "~> 4.9"

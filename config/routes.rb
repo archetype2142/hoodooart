@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :products, only: %i[show index]
 
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
     resources :categories do
       delete :images, on: :member, action: :destroy_image
     end
+
+    resources :users
+    resources :user_products
+
     root to: "products#index"
   end
 
