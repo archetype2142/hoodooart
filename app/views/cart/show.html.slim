@@ -21,7 +21,7 @@
             tr.bg-white.border-b.hover:bg-gray-50
               th scope="row" class="px-6 py-4 font-medium whitespace-nowrap" = product.sku
               td class="px-6 py-4" = product.title
-              td class="px-6 py-4" = current_user.user_products.find_by(product_id: product.id)&.price || product.price
+              td class="px-6 py-4" = current_user&.user_products&.find_by(product_id: product.id)&.price || product.price
               td class="px-6 py-4" = render(QuantityInputComponent.new(quantity: (cookies[product.id] || 0), name: "products[#{product.id}]"))
               td class="px-6 py-4 text-right"
                 = link_to destroy_product_path(product_id: product.id), method: :delete, data: { "turbo-method": :delete }, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" do
