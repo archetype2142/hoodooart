@@ -1,2 +1,2 @@
-div id="#{dom_id product}"
-  = render(ProductCardComponent.new(product: product))
+div.hover:cursor-pointer id="#{dom_id product}"
+  span = render(ProductCardComponent.new(product: product, current_user: current_user))

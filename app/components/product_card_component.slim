@@ -1,4 +1,4 @@
-.bg-white.shadow-lg.rounded-lg.overflow-hidden.product-card
+.bg-white.shadow-lg.rounded-lg.overflow-hidden.product-card.hover:cursor-pointer
   .image.relative
     .absolute.top-2.left-2
       - @product.categories.each do |category|
@@ -17,7 +17,10 @@
           span = render(BadgeComponent.new) do
             = @product.sku
       p.text-gray-700.mb-4.mt-2 = @product.description&.to_plain_text&.truncate(120)
-    div
+    .flex.justify-between.flex-row
       = form_with(url: @product, method: :get) do
-        = render(ButtonComponent.new(type: :outline, button_type: :submit)) do
+        = render(ButtonComponent.new(type: :outline, button_type: :submit, custom_classes: 'hover:cursor-pointer')) do
           span = t('view_details')
+      - if @current_user && @product.users.include?(@current_user)
+        = render(ButtonComponent.new(type: :outline)) do
+          span = humanized_money_with_symbol @product.user_products.where(user: @current_user).first&.price

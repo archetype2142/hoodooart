@@ -38,7 +38,7 @@ hr.my-8
 .flex.overflow-x-auto.gap-8.md:px-0.px-5.recommendations.pb-5.snap-x
   - Product.order("RANDOM()").limit(5).each do |product|
     .snap-center
-      = render(ProductCardComponent.new(product: product))
+      = render(ProductCardComponent.new(product: product, current_user: current_user))
     /= image_tag product.images.first
 
 css:

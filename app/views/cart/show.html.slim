@@ -17,7 +17,7 @@
           th scope="col" class="px-6 py-3" = I18n.t('quantity')
           th scope="col" class="px-6 py-3" = I18n.t('edit')
         tbody
-          - Product.where(id: cookies[:products]&.split(',')).each do |product|
+          - Product.where(id: cookies[:products]&.split(',') || params[:product_ids]).each do |product|
             tr.bg-white.border-b.hover:bg-gray-50
               th scope="row" class="px-6 py-4 font-medium whitespace-nowrap" = product.sku
               td class="px-6 py-4" = product.title
